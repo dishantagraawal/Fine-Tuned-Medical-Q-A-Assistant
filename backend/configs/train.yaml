@@ -1,0 +1,16 @@
+base_model: Qwen/Qwen2.5-1.5B-Instruct
+hardware_profile: cpu  # cpu | mps | cuda
+max_samples: 2000
+epochs: 1.0
+learning_rate: 2.0e-4
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+batch_size: 2
+gradient_accumulation_steps: 4
+max_seq_length: 512
+output_dir: ../data/adapters/latest
+logging_steps: 10
+save_steps: 200
+use_qlora: false  # set true only with cuda + bitsandbytes
+seed: 42

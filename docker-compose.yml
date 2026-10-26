@@ -1,0 +1,50 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: medical
+      POSTGRES_PASSWORD: medical
+      POSTGRES_DB: medical_qa
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U medical -d medical_qa"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      DATABASE_URL: postgresql+asyncpg://medical:medical@db:5432/medical_qa
+      DATABASE_URL_SYNC: postgresql://medical:medical@db:5432/medical_qa
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000,http://web:3000
+      MOCK_INFERENCE: "true"
+      HARDWARE_PROFILE: cpu
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./HealthCareMagic-100k.json:/app/HealthCareMagic-100k.json:ro
+      - ./backend:/app/backend
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+
+volumes:
+  pgdata:
