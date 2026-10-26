@@ -1,0 +1,70 @@
+{
+  "name": "offline_eval_20261026T101414Z",
+  "model_mode": "mock",
+  "sample_size": 5,
+  "metrics": {
+    "avg_latency_ms": 0.02,
+    "p50_latency_ms": 0.02,
+    "avg_token_overlap": 0.2399,
+    "avg_rougeL_f1": 0.1199
+  },
+  "comparison": {
+    "note": "Base vs fine-tuned comparison requires a saved adapter under data/adapters/latest and running evaluation with MOCK_INFERENCE=false.",
+    "adapter_present": false,
+    "primary_mode": "mock",
+    "primary_metrics": {
+      "avg_latency_ms": 0.02,
+      "avg_token_overlap": 0.2399,
+      "avg_rougeL_f1": 0.1199
+    }
+  },
+  "examples": [
+    {
+      "question": "hi, i have been recently diagnosed with H pylori.. i have been give the triple treatment of calithramycin, amoxxicilin and omeprazole.. is dis something very serious and does this have some long term ",
+      "reference_len": 901,
+      "prediction_len": 502,
+      "latency_ms": 0.02,
+      "token_overlap": 0.2727,
+      "rougeL_f1": 0.1228,
+      "model_mode": "mock"
+    },
+    {
+      "question": "i had surgery done 5 months ago for scar tissue and adhesion removal. my gynecologist just found a cyst on my right ovary. im still having problems, when my husband and i have sex i get severe cervica",
+      "reference_len": 835,
+      "prediction_len": 502,
+      "latency_ms": 0.03,
+      "token_overlap": 0.2286,
+      "rougeL_f1": 0.1116,
+      "model_mode": "mock"
+    },
+    {
+      "question": "Hi Over the past 2 days I have had a sore jaw on the right side only. Doesn t feel sore on the outside of my face, but extremely tender on the tendon that attaches jaw together. Inside of cheek also a",
+      "reference_len": 1315,
+      "prediction_len": 502,
+      "latency_ms": 0.01,
+      "token_overlap": 0.3333,
+      "rougeL_f1": 0.131,
+      "model_mode": "mock"
+    },
+    {
+      "question": "dear doctor, in hot and humid weather my 5 year old get some sort of pimples here and there on her body....i hv put her on homeopathy and also put spirit on it which prevents pimple from growing furth",
+      "reference_len": 879,
+      "prediction_len": 502,
+      "latency_ms": 0.02,
+      "token_overlap": 0.2361,
+      "rougeL_f1": 0.1181,
+      "model_mode": "mock"
+    },
+    {
+      "question": "Hi. I have a history of kidney stones and I recently just passed another stone back in December. I woke up today, though, in terrible pain. I feel like Im going to vomit, like something tight is gaggi",
+      "reference_len": 425,
+      "prediction_len": 502,
+      "latency_ms": 0.02,
+      "token_overlap": 0.1286,
+      "rougeL_f1": 0.1161,
+      "model_mode": "mock"
+    }
+  ],
+  "notes": "Metrics computed on held-out test split only. No fabricated scores. Mock mode yields educational placeholders.",
+  "created_at": "2026-10-26T10:14:14.875203+00:00"
+}

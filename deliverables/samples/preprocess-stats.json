@@ -1,0 +1,28 @@
+{
+  "source_name": "HealthCareMagic-100k",
+  "source_path": "/Users/dishantagrawal/Desktop/Fine-Tuned Medical Q&A Assistant/HealthCareMagic-100k.json",
+  "extracted_path": "/Users/dishantagrawal/Desktop/Fine-Tuned Medical Q&A Assistant/data/raw/HealthCareMagic-100k.json",
+  "total_raw": 112165,
+  "valid": 112150,
+  "invalid": 15,
+  "duplicates_removed": 0,
+  "unique": 112150,
+  "train_count": 89655,
+  "val_count": 11282,
+  "test_count": 11213,
+  "split_ratios": "80/10/10",
+  "split_method": "sha256(seed|normalized_question) % 100",
+  "seed": 42,
+  "leakage_question_overlap": {
+    "train_val": 0,
+    "train_test": 0,
+    "val_test": 0
+  },
+  "fields": {
+    "question": "input",
+    "answer": "output",
+    "instruction": "instruction"
+  },
+  "avg_question_len": 437.74,
+  "avg_answer_len": 649.23
+}

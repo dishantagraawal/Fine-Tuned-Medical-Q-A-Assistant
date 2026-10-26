@@ -176,7 +176,14 @@ npx --yes tsx --test src/lib/api.test.ts
 ├── frontend/          Next.js dashboard
 ├── backend/           FastAPI + ml/preprocess|train|evaluate
 ├── data/              processed splits, uploads, adapters
+├── deliverables/      Project report, screenshots, sample outputs
 ├── docker-compose.yml
 ├── HealthCareMagic-100k.json   # zip archive of the dataset
 └── README.md
 ```
+
+## Deliverables (report & screenshots)
+
+- Project report: [`deliverables/01-project-report.md`](deliverables/01-project-report.md)
+- Screenshots: [`deliverables/screenshots/`](deliverables/screenshots/)
+- Sample API/eval JSON: [`deliverables/samples/`](deliverables/samples/)
